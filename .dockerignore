@@ -1,0 +1,32 @@
+# --- VCS / IDE ---
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# --- Build artifacts ---
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+coverage
+
+# --- Dependencies (will be installed inside the image) ---
+node_modules
+
+# --- Logs / env / misc ---
+*.log
+npm-debug.log*
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# --- Docs / Docker meta (don't need them in build context) ---
+Dockerfile
+.dockerignore
+docker-compose*.yml
+README.md

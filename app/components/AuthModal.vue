@@ -103,7 +103,9 @@ async function submit() {
   }
 }
 
-function resolveServerMessage(data: { code?: string; message?: string } | null | undefined): string {
+function resolveServerMessage(
+  data: { code?: string; message?: string } | null | undefined
+): string {
   if (!data) return t('auth.errors.network')
   if (data.code) {
     const key = `auth.server.${data.code}`

@@ -1,0 +1,32 @@
+# Local build + run via Docker Compose.
+#
+# Usage:
+#   docker compose build
+#   docker compose up -d
+#   docker compose logs -f kinora
+#
+# On a server you can use the SAME file: copy it and run `docker compose up -d`
+# (it will build the image from the cloned repo). If you'd rather pull a
+# pre-built image, replace `build:` with `image: ghcr.io/<owner>/kinora:<tag>`.
+
+services:
+  kinora:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kinora:latest
+    container_name: kinora
+    restart: unless-stopped
+    ports:
+      - '${HOST_PORT:-3000}:3000'
+    environment:
+      NODE_ENV: production
+      # Override at deploy time, e.g.
+      #   NUXT_PUBLIC_CDN_BASE=https://cdn.example.com/kinora docker compose up -d
+      NUXT_PUBLIC_CDN_BASE: ${NUXT_PUBLIC_CDN_BASE:-/gallery}
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:3000/api/_healthz']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

@@ -92,7 +92,9 @@ onBeforeUnmount(() => {
   color: var(--text);
   font-size: 13px;
   font-weight: 500;
-  transition: border-color 0.15s, color 0.15s;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
 }
 
 .lang__btn:hover {
