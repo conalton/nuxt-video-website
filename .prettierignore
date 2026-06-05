@@ -1,0 +1,22 @@
+# Nuxt build artifacts
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+
+# Dependencies
+node_modules
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated / vendor
+public
+coverage
+
+# Translations are JSON — keep them stable and human-edited
+i18n/locales

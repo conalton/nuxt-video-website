@@ -1,0 +1,53 @@
+{
+  "site": {
+    "title": "Kinora",
+    "brand": "Kinora"
+  },
+  "nav": {
+    "login": "Sign in",
+    "register": "Sign up",
+    "logout": "Sign out"
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create an account",
+    "email": "Email",
+    "emailPlaceholder": "you{'@'}example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter password",
+    "passwordConfirm": "Confirm password",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "submitLogin": "Sign in",
+    "submitRegister": "Sign up",
+    "switchToRegister": "Don't have an account? Sign up",
+    "switchToLogin": "Already have an account? Sign in",
+    "cancel": "Cancel",
+    "loading": "Sending...",
+    "server": {
+      "INVITE_ONLY_REGISTER": "Registration is temporarily paused and available by invitation only.",
+      "INVITE_ONLY_LOGIN": "Sign-in is temporarily unavailable. Access is granted by invitation only.",
+      "unknown": "Unknown error"
+    },
+    "errors": {
+      "required": "This field is required",
+      "email": "Enter a valid email",
+      "passwordShort": "Password must be at least 6 characters",
+      "passwordMismatch": "Passwords do not match",
+      "network": "Could not reach the server"
+    }
+  },
+  "gallery": {
+    "title": "Feed",
+    "subtitle": "A selection of video previews",
+    "item": "Video #{n}"
+  },
+  "footer": {
+    "rights": "© {year} Kinora. All rights reserved."
+  },
+  "locale": {
+    "label": "Language",
+    "ru": "Русский",
+    "en": "English"
+  }
+}

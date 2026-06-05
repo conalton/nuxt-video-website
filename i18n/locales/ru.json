@@ -1,0 +1,53 @@
+{
+  "site": {
+    "title": "Kinora",
+    "brand": "Kinora"
+  },
+  "nav": {
+    "login": "Войти",
+    "register": "Регистрация",
+    "logout": "Выйти"
+  },
+  "auth": {
+    "loginTitle": "Вход в аккаунт",
+    "registerTitle": "Создать аккаунт",
+    "email": "Электронная почта",
+    "emailPlaceholder": "you{'@'}example.com",
+    "password": "Пароль",
+    "passwordPlaceholder": "Введите пароль",
+    "passwordConfirm": "Повторите пароль",
+    "name": "Имя",
+    "namePlaceholder": "Как вас зовут",
+    "submitLogin": "Войти",
+    "submitRegister": "Зарегистрироваться",
+    "switchToRegister": "Нет аккаунта? Зарегистрируйтесь",
+    "switchToLogin": "Уже есть аккаунт? Войдите",
+    "cancel": "Отмена",
+    "loading": "Отправка...",
+    "server": {
+      "INVITE_ONLY_REGISTER": "Регистрация временно приостановлена и доступна только по приглашению.",
+      "INVITE_ONLY_LOGIN": "Вход временно недоступен. Доступ предоставляется только по приглашению.",
+      "unknown": "Неизвестная ошибка"
+    },
+    "errors": {
+      "required": "Заполните это поле",
+      "email": "Введите корректный email",
+      "passwordShort": "Пароль должен быть не короче 6 символов",
+      "passwordMismatch": "Пароли не совпадают",
+      "network": "Не удалось связаться с сервером"
+    }
+  },
+  "gallery": {
+    "title": "Лента",
+    "subtitle": "Подборка видео-превью",
+    "item": "Видео #{n}"
+  },
+  "footer": {
+    "rights": "© {year} Kinora. Все права защищены."
+  },
+  "locale": {
+    "label": "Язык",
+    "ru": "Русский",
+    "en": "English"
+  }
+}
