@@ -1,20 +1,23 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const { t } = useI18n()
+const { t, tm, rt } = useI18n()
 const { public: publicConfig } = useRuntimeConfig()
 const cdnBase = (publicConfig.cdnBase as string).replace(/\/+$/, '')
 
-const items = computed(() =>
-  Array.from({ length: 18 }, (_, i) => {
+const items = computed(() => {
+  const titles = (tm('gallery.items') as unknown as unknown[]) ?? []
+  return Array.from({ length: 18 }, (_, i) => {
     const n = i + 1
+    const raw = titles[i]
+    const title = raw ? rt(raw as never) : t('gallery.item')
     return {
       n,
-      title: t('gallery.item', { n }),
+      title,
       src: `${cdnBase}/vp-${n}.jpg`
     }
   })
-)
+})
 </script>
 
 <template>

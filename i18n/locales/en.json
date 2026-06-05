@@ -38,9 +38,29 @@
     }
   },
   "gallery": {
-    "title": "Feed",
-    "subtitle": "A selection of video previews",
-    "item": "Video #{n}"
+    "title": "Fresh",
+    "subtitle": "New uploads from creators in the last 24 hours",
+    "item": "Untitled",
+    "items": [
+      "Morning at the cafe",
+      "Packing for the trip",
+      "Testing the new lens",
+      "One day in the city",
+      "A walk after the rain",
+      "How the evening ended",
+      "Sunset from the balcony",
+      "Weekend route",
+      "What I brought with me",
+      "Friends react to the surprise",
+      "Quiet hour",
+      "Cooking dinner for the first time",
+      "First trip of the season",
+      "On the way home",
+      "Late shift",
+      "Sunday playlist",
+      "Until summer ends",
+      "The final shot"
+    ]
   },
   "footer": {
     "rights": "© {year} Kinora. All rights reserved."
