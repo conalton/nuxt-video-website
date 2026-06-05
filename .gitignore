@@ -1,0 +1,66 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Misc
+.DS_Store
+.fleet
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+.history/
+
+# JetBrains (WebStorm, IntelliJ IDEA, PhpStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# Vim / misc editors
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Tests / coverage
+coverage
+*.lcov
+.nyc_output
+
+# TypeScript / linters caches
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# Docker local overrides
+docker-compose.override.yml
+
