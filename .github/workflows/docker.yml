@@ -2,7 +2,7 @@ name: Publish Docker image
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     tags: ['v*.*.*']
   workflow_dispatch:
 
@@ -49,7 +49,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            # Branch name (e.g. "main")
+            # Branch name (e.g. "master")
             type=ref,event=branch
             # PR ref (only fires on pull_request events, kept for future use)
             type=ref,event=pr
