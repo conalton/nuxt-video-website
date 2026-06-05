@@ -1,0 +1,27 @@
+# Standalone CDN container (nginx serving baked-in /gallery assets).
+#
+# Put this file on the CDN server and create a `.env` next to it:
+#   GHCR_OWNER=conalton
+#   GHCR_REPO=nuxt-video-website
+#   IMAGE_TAG=latest           # or sha-xxxxxxx / a release tag
+#   HOST_PORT=8080             # which loopback port to bind on the host
+#
+# Usage:
+#   docker compose -f docker-compose.cdn.yml pull
+#   docker compose -f docker-compose.cdn.yml up -d
+
+services:
+  cdn:
+    image: ghcr.io/${GHCR_OWNER:?set GHCR_OWNER}/${GHCR_REPO:?set GHCR_REPO}-cdn:${IMAGE_TAG:-latest}
+    container_name: kinora-cdn
+    restart: unless-stopped
+    ports:
+      # Loopback only — exposed externally via Xray (Reality dest) or a
+      # separate reverse-proxy with TLS.
+      - '127.0.0.1:${HOST_PORT:-8080}:80'
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1/_healthz']
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
