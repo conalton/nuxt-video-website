@@ -1,0 +1,31 @@
+# Production compose — pulls a pre-built image from GHCR.
+#
+# The container binds to 127.0.0.1 ONLY on the host. TLS termination and
+# port 443 are expected to be handled by 3x-ui / Xray running in host
+# network mode on the same server, with VLESS+TLS+Vision fallback pointing
+# to 127.0.0.1:${HOST_PORT}.
+#
+# Usage on the server:
+#   1. (only if the GHCR package is private) docker login ghcr.io
+#   2. Put env vars into a `.env` file next to this compose file.
+#   3. docker compose -f docker-compose.prod.yml pull
+#      docker compose -f docker-compose.prod.yml up -d
+
+services:
+  kinora:
+    image: ghcr.io/${GHCR_OWNER:?set GHCR_OWNER to your GitHub owner/org}/${GHCR_REPO:?set GHCR_REPO to your repo name}:${IMAGE_TAG:-latest}
+    container_name: kinora
+    restart: unless-stopped
+    ports:
+      # Bound to loopback so the site is NOT reachable on the public IP.
+      # 3x-ui (host network) reaches it via 127.0.0.1:${HOST_PORT}.
+      - '127.0.0.1:${HOST_PORT:-3000}:3000'
+    environment:
+      NODE_ENV: production
+      NUXT_PUBLIC_CDN_BASE: ${NUXT_PUBLIC_CDN_BASE:-/gallery}
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:3000/api/_healthz']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
